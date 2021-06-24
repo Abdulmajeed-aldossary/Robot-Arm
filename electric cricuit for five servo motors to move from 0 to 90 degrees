@@ -1,0 +1,53 @@
+
+#include <Servo.h>
+
+Servo servo_1; 
+Servo servo_2;
+Servo servo_3;
+Servo servo_4;
+Servo servo_5; 
+
+//Servo Motor position in degrees 
+
+int servoPos= 0; 
+
+void setup()
+{
+ //Defining Servo motor signal inputs 
+  
+
+servo_1.attach(8); 
+servo_2.attach(9); 
+servo_3.attach(10);
+servo_4.attach(11);
+servo_5.attach(12);
+
+}
+
+void loop()
+{
+  //Servo Motor from 0 to 90 degrees
+  
+for(servoPos = 0; servoPos < 90; servoPos++) {
+    
+servo_1.write(servoPos);
+servo_2.write(servoPos); 
+servo_3.write(servoPos);  
+servo_4.write(servoPos);
+servo_5.write(servoPos); 
+
+delay(100); }
+  
+//Servo Motor from 90 to 0 degrees  
+  
+  
+for(servoPos = 90; servoPos > 0; servoPos--) {
+    
+servo_1.write(servoPos);
+servo_2.write(servoPos); 
+servo_3.write(servoPos);  
+servo_4.write(servoPos);
+servo_5.write(servoPos); 
+
+delay(100); }  
+}
