@@ -1,0 +1,68 @@
+
+#include <Servo.h> 
+
+//Defining Servo motors
+Servo servo_1; 
+Servo servo_2;
+Servo servo_3;
+Servo servo_4;
+Servo servo_5; 
+
+//Defining potentiometers  
+int pot_1 =A0;
+int pot_2 =A1;
+int pot_3 =A2;
+int pot_4 =A3; 
+int pot_5 =A4;  
+
+int valpot_1;
+int valpot_2;
+int valpot_3;
+int valpot_4;
+int valpot_5;
+
+// Variable to read the values from the analog pin (potentiometers)
+
+
+void setup()
+{
+ //Defining Servo motor signal inputs 
+  
+
+servo_1.attach(8); 
+servo_2.attach(9); 
+servo_3.attach(10);
+servo_4.attach(11);
+servo_5.attach(12);
+
+}
+
+void loop()
+{
+ //  Reading the values from potentiometers (values between 0 and 1023)
+valpot_1 = analogRead(pot_1); 
+valpot_1 = map(valpot_1, 0, 1023,  0, 90);   // Scale it to use it with servo (values between 0 and 90)
+servo_1.write(valpot_1); // Set the servo position according to the scaled values
+delay(15); 
+  
+valpot_2 = analogRead(pot_2); 
+valpot_2 = map (valpot_2, 0, 1023,  0, 90);   
+servo_2.write(valpot_2); 
+delay(15); 
+    
+valpot_3 = analogRead(pot_3); 
+valpot_3 = map (valpot_3, 0, 1023,  0, 90);   
+servo_3.write(valpot_3); 
+delay(15); 
+  
+valpot_4 = analogRead(pot_4); 
+valpot_4 = map (valpot_4, 0, 1023,  0, 90);   
+servo_4.write(valpot_4); 
+delay(15); 
+  
+valpot_5 = analogRead(pot_5); 
+valpot_5 = map (valpot_5, 0, 1023,  0, 90);   
+servo_5.write(valpot_5); 
+delay(15);   
+  
+}
